@@ -1,35 +1,35 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>Forum | Login</title>
   </head>
   <body>
     <div class="add-card">
       <form action="" method="post">
+        {% csrf_token %}
         <div class="add-post post-body">
           <h3>Login</h3>
-          <div>
-            <input
-              type="text"
-              name="username"
-              placeholder="Enter Username"
-              id="breath"
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter Password"
-              id="breath"
-            />
-            <button id="login" type="submit">Submit</button>
-            <small
-              >Don't have an account,
-              <a href="./register.html">Signup</a></small
-            >
-          </div>
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            id="breath"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Password"
+            id="breath"
+          />
+          <button id="login" type="submit">Submit</button>
+          <small
+            >Don't have an account,
+            <a href="{% url 'register' %}">Signup</a></small
+          >
         </div>
       </form>
     </div>
