@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 # from .forms import UserForm
@@ -17,11 +17,30 @@ def forum(request,):
 
 def registerUser(request):
 
-    user = User()        
+    if request.method == 'POST':
+        firstname = request.POST['firstname']      
+        lastname = request.POST['lastname']      
+        username = request.POST['username']      
+        email = request.POST['email']      
+        password1 = request.POST['password1']      
+        password2 = request.POST['password2']      
 
+
+        if password1 == password2:
+            user = User(
+
+                first_name=firstname, 
+                last_name = lastname,
+                username = username,
+                email = email,
+                password=password1
+
+                )
+            user.save()
+            return redirect('login')
     
-    context={'user':user}
-    return render(request, 'register.html', context)
+    # context={'user':user}
+    return render(request, 'register.html')
 
 
 def loginUser(request):
@@ -36,6 +55,8 @@ def loginUser(request):
         if user is not None:
             login(request, user)
             return redirect("forum")
+        else:
+            return HttpResponse("Something went wrong!")
     
     context={'user':user_data}
     return render(request, 'login.html', context)

@@ -1,6 +1,67 @@
-<h1>Register</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>Forum | Signup</title>
+  </head>
+  <body>
+    <style>
+      form {
+        display: flex;
+      }
+    </style>
 
-<form action="" method="post">
-  {% csrf_token %} {{form}}
-  <input type="submit" value="Submit" />
-</form>
+    <div class="add-card">
+      <form action="" method="post">
+        <div class="add-post post-body">
+          <h3>Signup</h3>
+          {% csrf_token %}
+          <input
+            type="text"
+            name="firstname"
+            placeholder="Enter Firstname"
+            id="breath"
+          />
+          <input
+            type="text"
+            name="lastname"
+            placeholder="Enter Lastname"
+            id="breath"
+          />
+          <input
+            type="text"
+            name="username"
+            placeholder="Enter Username"
+            id="breath"
+          />
+          <input
+            type="text"
+            name="email"
+            placeholder="Enter Email"
+            id="breath"
+          />
+          <input
+            type="password"
+            name="password1"
+            placeholder="Enter Password"
+            id="breath"
+          />
+          <input
+            type="password"
+            name="password2"
+            placeholder="Confirm Password"
+            id="breath"
+          />
+          <button id="login" type="submit">Submit</button>
+          <small
+            >Already have an account,
+            <a href="{% url 'login' %}">Login</a></small
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
