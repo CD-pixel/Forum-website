@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>Forum | Home</title>
+  </head>
+  <body>
+    <header>
+      <!-- <h1>Forum</h1> -->
+      <input type="text" class="search" placeholder="Search a Topic..." />
+
+      {% if request.user.is_authenticated %}
+
+      <a href="">
+        <img src="../static/image/user.jpg" alt="" width="40px" height="40px" />
+      </a>
+      {% else %}
+      <a href="./login.html">
+        <button>Login</button>
+      </a>
+      {% endif %}
+    </header>
+    <!-- <hr> -->
+    <main>
+      <div></div>
+      <div class="post-cards">
+        <!-- <div class="add">
+          <a href="./add-thread.html">
+            <button class="button">Ask or Post</button>
+          </a>
+        </div> -->
+        <div class="card">
+          <div class="post">
+            <div class="post-body">
+              <div class="time-reply">
+                <div></div>
+                <small>{{post.created_at|timesince}} ago</small>
+              </div>
+              <div class="user-profile">
+                <img
+                  src="../static/image/user.jpg"
+                  alt=""
+                  width="30px"
+                  height="30px"
+                />
+                <strong>@{{post.author.username}}</strong>
+              </div>
+              <h4>{{post.title}}</h4>
+              <p>
+                <a href="">{{post.body}} </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="end-col">
+        <h3>Replies 250</h3>
+
+        {% for reply in replies%}
+
+        <li style="list-style: none; padding:0 20px; margin-top: 10px">
+          <div class="time-reply" style="padding:20px 0;">
+            <small>
+              <a href="">@{{reply.author.username}}</a>
+            </small>
+            <small> {{reply.created_at|timesince}} ago </small>
+          </div>
+          <p>{{reply.message}}</p>
+        </li>
+        {% empty %}
+
+        <div class="null">
+          <small>Not available</small>
+        </div>
+        {% endfor %}
+        <div class="reply-form">
+          <form action="">
+            <textarea name="" id=""></textarea>
+            <button>Reply</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f7f7f7;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 4fr 3fr;
+  font-family: unset;
+  color: #6b6868;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  margin: 20px 10px 20px 10px;
+}
+
+.card img {
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+.post-body {
+  padding: 20px 20px 20px 20px;
+  /* border: 1px solid #979696a6; */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px #a5a4a433;
+  background-color: white;
+}
+
+.post-body p {
+  line-height: 2;
+}
+
+.card .post a {
+  text-decoration: none;
+  color: #333333;
+}
+
+header {
+  width: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 150px 10px 158px;
+}
+
+header a button {
+  border-radius: 3px;
+  border: 1px solid rgb(75, 206, 75);
+  color: rgb(75, 206, 75);
+  padding: 15px 70px 15px 70px;
+  /* width: auto;` */
+  margin-top: 25px;
+  cursor: pointer;
+  margin-left: 20px;
+  background-color: white;
+}
+
+header a button:hover {
+  color: white;
+  background-color: rgb(75, 206, 75);
+}
+
+header img {
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+header .search {
+  border: none;
+  background-color: #f7f7f7;
+  padding-left: 10px;
+  border-radius: 0px;
+  width: 90%;
+  height: 50px;
+  color: #333333;
+  margin-top: 10px;
+}
+
+.button {
+  border-radius: 3px;
+  background-color: rgb(75, 206, 75);
+  color: white;
+  padding: 15px 70px 15px 70px;
+  /* width: auto;` */
+  border: none;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.post-cards .add {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+}
+
+hr {
+  border: 1px solid #cccccc;
+}
+
+.time-reply {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.time-reply a {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.add-post {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.add-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.add-card input,
+.textarea,
+button {
+  border: none;
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+}
+
+.add-card button {
+  cursor: pointer;
+  background-color: rgb(75, 206, 75);
+  color: white;
+}
+
+.add-post h3 {
+  padding: 10px;
+  color: #6b6868;
+}
+
+.end-col {
+  padding: 30px;
+  box-shadow: 0 10px 20px #a5a4a433;
+  margin: 25px;
+  background-color: white;
+  height: fit-content;
+}
+
+.end-col .null {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+}
+
+#breath {
+  width: 350px;
+}
+
+#login {
+  width: 150px;
+}
+
+.register {
+  margin: 2%;
+}
+/* 
+.reply-form{
+  margin-top: 30px;
+}
+
+.reply{
+  width: auto;
+  background-color: rgb(75, 206, 75);
+  border: none;
+}
+} */
+
+.reply-form textarea {
+  width: 100%;
+  border-radius: 0;
+  background-color: #f7f7f7;
+  border: none;
+  padding: 10px;
+}
+
+.reply-form button {
+  width: auto;
+  border-radius: 0;
+  background-color: rgb(75, 206, 75);
+  border: none;
+  padding: 10px 30px 10px 30px;
+  margin-top: 10px;
+  color: white;
+}
+
+.reply-form {
+  margin-top: 60px;
+  margin-right: 15px;
+}
+
+.user-profile {
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px !important;
+}
